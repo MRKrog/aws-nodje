@@ -1,7 +1,7 @@
 # NOTE: update this with your service name
 service: my-project
 
-# Create an optimized package for our functions 
+# Create an optimized package for our functions
 package:
   individually: true
 
@@ -25,8 +25,31 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: functions/handler.hello
     events:
       - http:
           path: hello
           method: get
+  sayHello:
+    handler: functions/sayHello.hola
+    events:
+      - http:
+          path: sayHello
+          method: get
+
+  # hello:
+  #   handler: functions/handler.hello
+  #   events:
+  #     - http:
+  #         path: hello
+  #         method: get
+
+# functions:
+#   first:
+#     handler: first.hello
+#   second:
+#     handler: second.hello
+#     events:
+#       - http:
+#           method: get
+#           path: second
